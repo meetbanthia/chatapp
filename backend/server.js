@@ -1,5 +1,5 @@
 const express = require("express");
-const chats = require("./data/data.js");
+const {chats} = require("./data/data.js");
 
 const app = express();
 
@@ -17,7 +17,7 @@ app.get("/api/chat/:id",(req,res)=>{
     // const singlechat = chats.find((c) => c._id === req.params.id);
     // res.send(singlechat);
     let temp = 0;
-    console.log(chats.length);
+    // console.log(chats.length);
     for (let i = 0, len = chats.length; i < len; i++) {
         //if _id in dict chats[i] is same as req.params.id, show it
         if(chats[i]._id === req.params.id){
